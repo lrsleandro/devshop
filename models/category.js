@@ -17,5 +17,6 @@ const getCategories = db => async() => {
 }
 
 module.exports = {
-    getCategories, getCategoryById
+    getCategoryById,
+    getCategories
 }

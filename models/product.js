@@ -1,3 +1,10 @@
+const getProductById = db => async(id) => {
+    const product = await db('products')
+                        .select('*')
+                        .where('id', id)
+    return product[0]
+}
+
 const getProductsByCategoryId = db => async(id) => {
     const products = await db('products').select('*').where('id', function(){
         this
@@ -10,5 +17,6 @@ const getProductsByCategoryId = db => async(id) => {
 }
 
 module.exports = {
+    getProductById,
     getProductsByCategoryId
 }
