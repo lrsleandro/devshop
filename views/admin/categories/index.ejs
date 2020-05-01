@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg">
+<div class="container">
+	<h2 class="title-page">Admin</h2>
+	<nav>
+	<ol class="breadcrumb text-white">
+	    <li class="breadcrumb-item"><a href="/">Home</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Admin</li>
+	</ol>  
+	</nav>
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+<div class="container">
+
+<div class="row">
+	<aside class="col-md-3">
+
+	</aside> <!-- col.// -->
+	<main class="col-md-12">
+    <a href="/admin/categorias/nova" class="btn btn-primary btn-block"><i class="fad fa-plus"></i> 
+                    <span class="text">Nova Categoria</span></a><br>
+	<% categories.forEach( category => { %>
+
+<article class="card card-product-list">
+	<div class="row no-gutters">
+		<div class="col-md-9">
+			<div class="info-main">
+				<a href="#" class="h5 title"> <%= category.category %>  </a>
+			</div> <!-- info-main.// -->
+		</div> <!-- col.// -->
+        <aside class="col-sm-3">
+            <p>
+                <a href="/admin/categorias/editar/<%- category.id %>" class="btn btn-primary btn-block"> Editar </a>
+                <a href="/admin/categorias/excluir/<%- category.id %>" class="btn btn-light btn-block"><i class="fad fa-trash-alt"></i> 
+                    <span class="text">Excluír</span></a>
+            </p>
+        </aside>
+	</div> <!-- row.// -->
+</article> <!-- card-product .// -->
+
+	<% }) %>
+	</main> <!-- col.// -->
+
+</div>
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<%- include('../partials/footer') %>

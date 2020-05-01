@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg">
+<div class="container">
+	<h2 class="title-page">Admin</h2>
+	<nav>
+	<ol class="breadcrumb text-white">
+	    <li class="breadcrumb-item"><a href="/">Home</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Admin</li>
+	</ol>  
+	</nav>
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+<div class="container">
+
+<div class="row">
+	<aside class="col-md-3">
+
+	</aside> <!-- col.// -->
+	<main class="col-md-12">
+
+<article class="card card-body">
+<header class="mb-4">
+	<h4 class="card-title">Editando categoria: <%= form.category %></h4>
+</header>
+<form method="post">
+	<div class="form-group">
+        <label>Categoria</label>
+        <input name="category" type="text" class="form-control <% if(errors.indexOf('category') >= 0){ %> is-invalid <% } %>" placeholder="" value="<%= form.category %>">
+		<div class="invalid-feedback">
+			Por favor, informe uma categoria.
+        </div>
+	</div> <!-- form-row end.// -->
+	<div class="form-group">
+		<label>Descrição</label>
+		<textarea name="description" class="form-control <% if(errors.indexOf('description') >= 0){ %> is-invalid <% } %>" placeholder=""><%= form.description %></textarea>
+		<div class="invalid-feedback">
+			Por favor, informe uma descrição.
+        </div>
+	</div> <!-- form-group end.// -->
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary btn-block"> Salvar Categoria  </button>
+    </div> <!-- form-group// -->
+</form>
+</article> <!-- card-product .// -->
+
+	</main> <!-- col.// -->
+
+</div>
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<%- include('../partials/footer') %>

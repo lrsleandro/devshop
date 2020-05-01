@@ -1,0 +1,2 @@
+obs. caso de erro ao executar o banco devshop, excluír o VISIBLE
+das tabelas que executa sem erro.
